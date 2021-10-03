@@ -1,6 +1,8 @@
 ## Install
 ```sh
-git clone https://github.com/crimera/termux-dotfiles ~/.dotfiles
+dpkg install git
+
+git clone https://github.com/codekow/termux-dotfiles ~/.dotfiles
 cd ~/.dotfiles
-./install.sh
+./setup.sh
 ```

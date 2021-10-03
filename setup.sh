@@ -1,6 +1,5 @@
 #!/bin/bash
 
-GREEN='\033[1;31m'
 PACKAGES=$(cat termux-packages.txt)
 
 copy () {
@@ -16,7 +15,6 @@ run_dpkg() {
     dpkg -l "$1" | grep -q ^ii && return 1
     apt-get -y install "$@"
     #pkg install $@
-    echo "${GREEN}$1 is installed"
     return 0
 }
 
@@ -44,7 +42,8 @@ copy bin
 copy .termux
 copy .bashrc
 copy .vimrc
+copy .ssh
 
 add_pkgs
 add_vim
-#add_other
+add_other

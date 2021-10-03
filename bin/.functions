@@ -2,8 +2,12 @@
 
 SSHD_PORT=2222
 
-termux_start_ssh(){
-  sshd -E .ssh.log -p $SSHD_PORT
+termux_start_sshd(){
+  pgrep sshd > /dev/null && return 0
+  echo "
+  Starting SSH on port $SSHD_PORT.
+  " | termux-tts-speak 
+  sshd -4 -E $TMPDIR/ssh.log -p $SSHD_PORT
 }
 
 termux_backup() {
