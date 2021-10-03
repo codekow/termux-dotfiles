@@ -1,0 +1,17 @@
+#!/bin/sh
+
+SSHD_PORT=2222
+
+termux_start_ssh(){
+  sshd -E .ssh.log -p $SSHD_PORT
+}
+
+termux_backup() {
+  tar -zcf /sdcard/termux-backup.tar.gz -C /data/data/com.termux/files ./home ./usr
+}
+
+termux_restore() {
+  tar -zxf /sdcard/termux-backup.tar.gz -C /data/data/com.termux/files --recursive-unlink --preserve-permissions
+}
+
+
