@@ -6,7 +6,13 @@ termux_start_sshd(){
   pgrep sshd > /dev/null && return 0
   echo "
   Starting SSH on port $SSHD_PORT.
-  " | termux-tts-speak 
+  " | termux-tts-speak &
+
+  termux-notification \
+      --priority high \
+      -t 'SSH has started' \
+      -c "$(date)" \
+      --id start_ssh
   sshd -4 -E $TMPDIR/ssh.log -p $SSHD_PORT
 }
 
