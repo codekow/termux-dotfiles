@@ -10,6 +10,10 @@ termux_start_sshd(){
   sshd -4 -E $TMPDIR/ssh.log -p $SSHD_PORT
 }
 
+termux_stop_sshd(){
+  killall sshd
+}
+
 termux_backup() {
   tar -zcf /sdcard/termux-backup.tar.gz -C /data/data/com.termux/files ./home ./usr
 }
