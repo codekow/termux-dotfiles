@@ -3,3 +3,7 @@ zsh
 git
 jq
 termux-api
+rclone
+nmap
+termux-elf-cleaner
+rust
