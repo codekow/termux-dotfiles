@@ -7,3 +7,5 @@ rclone
 nmap
 termux-elf-cleaner
 rust
+byobu
+bash-completion

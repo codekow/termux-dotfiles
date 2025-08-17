@@ -45,5 +45,5 @@ copy .vimrc
 copy .ssh
 
 add_pkgs
-add_vim
-add_other
+# add_vim
+# add_other
